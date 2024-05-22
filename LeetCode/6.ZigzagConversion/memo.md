@@ -1,3 +1,8 @@
+## 문제
+
+- Lv.Medium
+- [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/description/?envType=study-plan-v2&envId=top-interview-150)
+
 ## 풀이
 
 앞자리: 2차원 배열의 첫번째 인덱스, 뒷자리: 두번째 인덱스
