@@ -9,3 +9,15 @@
 - 재귀 함수 사용하는 로직 중, 피보나치 수열 구하는 로직과 비슷하다고 생각함
 
   - 피보나치: `return func(n-1) + func(n-2)`
+
+```js
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var countNodes = function (root) {
+  if (!root) return 0;
+
+  return 1 + countNodes(root.left) + countNodes(root.right); // 1은 시작 root 노드를 포함하기 위함
+};
+```

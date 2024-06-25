@@ -12,3 +12,40 @@
   - 해당 루트값을 dequeue하면서, 해당 루트의 left와 right를 queue에 추가
   - queue에 있는 left 값을 dequeue 하면서, 그 left의 left와 right를 queue에 추가
   - 이런 방식을 반복하면 큐에 동일한 레벨의 노드들이 모아져 있게 되고, 이 때 평균값 게산에서 배열에 추가
+
+```js
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var averageOfLevels = function (root) {
+  const queue = [];
+  const levelAverage = [];
+
+  // 시작
+  queue.push(root);
+
+  while (queue.length) {
+    let sum = 0;
+    let levelLength = queue.length;
+
+    for (let i = 0; i < levelLength; i++) {
+      let node = queue.shift();
+      sum += node.val;
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    levelAverage.push(sum / levelLength);
+  }
+
+  return levelAverage;
+};
+```
