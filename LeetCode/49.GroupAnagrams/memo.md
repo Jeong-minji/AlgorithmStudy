@@ -1,7 +1,7 @@
 ## 문제
 
 - Lv. Medium
-- [49. Group Anagrams](https://leetcode.com/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+- [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-interview-150)
 
 ## 1차 접근
 
