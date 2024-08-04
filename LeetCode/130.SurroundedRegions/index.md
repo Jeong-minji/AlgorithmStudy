@@ -33,7 +33,7 @@
 
 ## 코드
 
-```
+```js
 const solve = (board) => {
   if (board.length === 0 || board[0].length === 0) return;
 
@@ -43,12 +43,12 @@ const solve = (board) => {
     [1, 0], // 상
     [-1, 0], // 하
     [0, 1], // 좌
-    [0, -1] // 우
+    [0, -1], // 우
   ];
 
   const bfs = (row, col) => {
     const queue = [[row, col]];
-    board[row][col] = '-';
+    board[row][col] = "-";
 
     while (queue.length > 0) {
       const [currRow, currCol] = queue.shift();
@@ -62,35 +62,35 @@ const solve = (board) => {
           newRow < rows &&
           newCol >= 0 &&
           newCol < cols &&
-          board[newRow][newCol] === 'O'
+          board[newRow][newCol] === "O"
         ) {
-          board[newRow][newCol] = '-';
+          board[newRow][newCol] = "-";
           queue.push([newRow, newCol]);
         }
       }
     }
-  }
+  };
 
   for (let i = 0; i < rows; i++) {
-    if (board[i][0] === 'O') bfs(i, 0);
-    if (board[i][cols - 1] === 'O') bfs(i, cols - 1);
+    if (board[i][0] === "O") bfs(i, 0);
+    if (board[i][cols - 1] === "O") bfs(i, cols - 1);
   }
 
   for (let j = 0; j < cols; j++) {
-    if (board[0][j] === 'O') bfs(0, j);
-    if (board[rows - 1][j] === 'O') bfs(rows - 1, j);
+    if (board[0][j] === "O") bfs(0, j);
+    if (board[rows - 1][j] === "O") bfs(rows - 1, j);
   }
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
-      if (board[i][j] === 'O') {
-        board[i][j] = 'X';
-      } else if (board[i][j] === '-') {
-        board[i][j] = 'O';
+      if (board[i][j] === "O") {
+        board[i][j] = "X";
+      } else if (board[i][j] === "-") {
+        board[i][j] = "O";
       }
     }
   }
 
-  return board
-}
+  return board;
+};
 ```
